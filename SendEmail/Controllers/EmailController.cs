@@ -15,14 +15,14 @@ namespace SendEmail.Controllers
         public IActionResult SendEmail(string body)
         {
             var email = new MimeMessage();
-            email.From.Add(MailboxAddress.Parse("ashley.paucek4@ethereal.email"));
-            email.To.Add(MailboxAddress.Parse("ashley.paucek4@ethereal.email"));
+            email.From.Add(MailboxAddress.Parse("jack.wintheiser43@ethereal.email"));
+            email.To.Add(MailboxAddress.Parse("jack.wintheiser43@ethereal.email"));
             email.Subject = "Test Email Subject";
             email.Body = new TextPart(TextFormat.Html) { Text = body };
 
             using var smtp = new SmtpClient();
             smtp.Connect("smtp.ethereal.email", 587, SecureSocketOptions.StartTls);
-            smtp.Authenticate("ashley.paucek4@ethereal.email", "utWVNVExQDeyj6e8U6");
+            smtp.Authenticate("jack.wintheiser43@ethereal.email", "DsE1FvDUW89cGKFZZR");
             smtp.Send(email);
             smtp.Disconnect(true);
 
